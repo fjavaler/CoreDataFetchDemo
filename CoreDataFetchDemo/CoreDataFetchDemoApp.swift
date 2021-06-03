@@ -9,12 +9,14 @@ import SwiftUI
 
 @main
 struct CoreDataFetchDemoApp: App {
-    let persistenceController = PersistenceController.shared
-
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-                .environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }
+  
+  // Singleton instance declared and initialized in Persistence.swift is stored for use throughout app.
+  let persistenceController = PersistenceController.shared
+  
+  var body: some Scene {
+    WindowGroup {
+      ContentView()
+        .environment(\.managedObjectContext, persistenceController.container.viewContext)
     }
+  }
 }
