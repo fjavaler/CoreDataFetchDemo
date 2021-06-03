@@ -17,6 +17,7 @@ struct CoreDataFetchDemoApp: App {
     WindowGroup {
       ContentView()
         .environment(\.managedObjectContext, persistenceController.container.viewContext)
+      // ^ Puts persistanceController into the environment to make available globally.
     }
   }
 }
